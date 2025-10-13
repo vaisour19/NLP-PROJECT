@@ -1,0 +1,353 @@
+{
+  "scene_name": "1LXtFkjw3qL",
+  "num_samples": 10,
+  "action_space": "allocentric",
+  "actions": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "up",
+    "down",
+    "stop"
+  ],
+  "coordinate_system": {
+    "x_axis": "East (positive) / West (negative)",
+    "y_axis": "North (positive) / South (negative)",
+    "z_axis": "Up (positive) / Down (negative)"
+  },
+  "samples": [
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0000",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Go from the hallway to the a chair.",
+      "action_sequence": [
+        "north",
+        "west",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -0.4618395,
+          -8.91875,
+          -1.642904
+        ],
+        [
+          -1.6114600147926794,
+          -7.628745562139931,
+          -2.6582119464874268
+        ]
+      ],
+      "start_node": "region_20",
+      "goal_node": "object_410",
+      "start_region": "20",
+      "goal_region": "20",
+      "path_length": 2.0041429599535485,
+      "num_actions": 3,
+      "has_vertical_movement": true,
+      "vertical_distance": 1.0153079464874268,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0001",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Go from the a lamp to the a door.",
+      "action_sequence": [
+        "north",
+        "north",
+        "north",
+        "east",
+        "north",
+        "north",
+        "north",
+        "north",
+        "east",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -5.758965132682666,
+          -15.817111500228176,
+          -0.4580112397670746
+        ],
+        [
+          -5.022474100984897,
+          -12.754894228170548,
+          -0.4543497562408447
+        ],
+        [
+          -3.658241703841233,
+          -9.086658129231848,
+          1.2928659915924072
+        ]
+      ],
+      "start_node": "object_343",
+      "goal_node": "object_96",
+      "start_region": "5",
+      "goal_region": "5",
+      "path_length": 7.435546951529564,
+      "num_actions": 10,
+      "has_vertical_movement": true,
+      "vertical_distance": 1.7508772313594818,
+      "landmarks": [
+        "lamp"
+      ]
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0002",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Walk from the bedroom to the a chair.",
+      "action_sequence": [
+        "north",
+        "west",
+        "west",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -4.68036,
+          -12.89305,
+          -1.615457
+        ],
+        [
+          -6.317756228481941,
+          -12.532973608849012,
+          -2.567344546318054
+        ]
+      ],
+      "start_node": "region_17",
+      "goal_node": "object_350",
+      "start_region": "17",
+      "goal_region": "17",
+      "path_length": 1.9279033475116456,
+      "num_actions": 4,
+      "has_vertical_movement": true,
+      "vertical_distance": 0.9518875463180543,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0003",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Move from the a lamp to the a door.",
+      "action_sequence": [
+        "up",
+        "up",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -2.5460177792746923,
+          -15.84594802685596,
+          -0.4642118513584137
+        ],
+        [
+          -3.6140543351363137,
+          -15.825588659406357,
+          1.2071102503687143
+        ]
+      ],
+      "start_node": "object_341",
+      "goal_node": "object_204",
+      "start_region": "10",
+      "goal_region": "10",
+      "path_length": 1.98354081284487,
+      "num_actions": 3,
+      "has_vertical_movement": true,
+      "vertical_distance": 1.671322101727128,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0004",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Move from the a lamp to the a lamp.",
+      "action_sequence": [
+        "north",
+        "east",
+        "east",
+        "east",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -1.947519040050071,
+          -11.212394903055785,
+          1.761274337768555
+        ],
+        [
+          1.086312682216454,
+          -10.627809232853952,
+          -0.3947180211544037
+        ]
+      ],
+      "start_node": "object_246",
+      "goal_node": "object_443",
+      "start_region": "11",
+      "goal_region": "11",
+      "path_length": 3.767516207870933,
+      "num_actions": 5,
+      "has_vertical_movement": true,
+      "vertical_distance": 2.1559923589229584,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0005",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Move from the a chair to the a lamp.",
+      "action_sequence": [
+        "north",
+        "west",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -2.558522605107337,
+          -2.1375869022854825,
+          1.0684632360935211
+        ],
+        [
+          -2.996132748816536,
+          -0.7304343433163218,
+          0.1859484314918518
+        ]
+      ],
+      "start_node": "object_148",
+      "goal_node": "object_517",
+      "start_region": "6",
+      "goal_region": "6",
+      "path_length": 1.7176767281510703,
+      "num_actions": 3,
+      "has_vertical_movement": true,
+      "vertical_distance": 0.8825148046016693,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0006",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Go from the a lamp to the a lamp.",
+      "action_sequence": [
+        "north",
+        "north",
+        "north",
+        "west",
+        "west",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -0.6791604907122422,
+          -9.786960020609024,
+          -0.3861920684576034
+        ],
+        [
+          -2.5751794788855644,
+          -6.438021968813206,
+          1.0432171821594238
+        ]
+      ],
+      "start_node": "object_408",
+      "goal_node": "object_232",
+      "start_region": "11",
+      "goal_region": "11",
+      "path_length": 4.105299609532694,
+      "num_actions": 6,
+      "has_vertical_movement": true,
+      "vertical_distance": 1.4294092506170273,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0007",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Head to the a chair from the a lamp.",
+      "action_sequence": [
+        "south",
+        "east",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -2.996132748816536,
+          -0.7304343433163218,
+          0.1859484314918518
+        ],
+        [
+          -1.681434792992748,
+          -1.2679543584052642,
+          1.058817237615585
+        ]
+      ],
+      "start_node": "object_517",
+      "goal_node": "object_147",
+      "start_region": "6",
+      "goal_region": "6",
+      "path_length": 1.667110804467518,
+      "num_actions": 3,
+      "has_vertical_movement": true,
+      "vertical_distance": 0.8728688061237333,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0008",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Go from the a lamp to the bathroom.",
+      "action_sequence": [
+        "up",
+        "up",
+        "up",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -2.705971906381337,
+          -15.944420185918064,
+          2.9927845001220703
+        ],
+        [
+          -1.555605,
+          -16.014850000000003,
+          5.85501
+        ]
+      ],
+      "start_node": "object_226",
+      "goal_node": "region_2",
+      "start_region": "2",
+      "goal_region": "2",
+      "path_length": 3.085553303730216,
+      "num_actions": 4,
+      "has_vertical_movement": true,
+      "vertical_distance": 2.8622254998779297,
+      "landmarks": []
+    },
+    {
+      "task_id": "1LXtFkjw3qL_synthetic_0009",
+      "scene_name": "1LXtFkjw3qL",
+      "instruction": "Head to the a mirror from the a bed.",
+      "action_sequence": [
+        "north",
+        "north",
+        "east",
+        "stop"
+      ],
+      "path_coordinates": [
+        [
+          -4.922103620055163,
+          -7.738531768949844,
+          -2.624334216117859
+        ],
+        [
+          -4.81237956193026,
+          -5.453200252310733,
+          -2.335749626159668
+        ]
+      ],
+      "start_node": "object_380",
+      "goal_node": "object_384",
+      "start_region": "19",
+      "goal_region": "19",
+      "path_length": 2.306092057016969,
+      "num_actions": 4,
+      "has_vertical_movement": false,
+      "vertical_distance": 0.2885845899581909,
+      "landmarks": []
+    }
+  ]
+}
