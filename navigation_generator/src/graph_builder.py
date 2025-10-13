@@ -30,29 +30,44 @@ class NavigableGraph:
     
     def _build_graph(self):
         """Build the navigation graph"""
-        # Add region nodes
+        # Add region nodes (use FLOOR-LEVEL coordinates, not bbox center)
         for region_id, region_data in self.parser.regions.items():
             node_id = f"region_{region_id}"
             self.graph.add_node(node_id)
+            
+            # Calculate floor level (bottom of bbox, not center)
+            center = region_data['center']
+            size = region_data['size']
+            floor_z = center[2] - (size[2] / 2.0)  # Bottom of bbox (z is index 2)
+            floor_coords = np.array([center[0], center[1], floor_z])
+            
             self.node_info[node_id] = {
                 'type': 'region',
                 'id': node_id,
                 'label': region_data['label'],
-                'coordinates': region_data['center'],
-                'region_id': region_id
+                'coordinates': floor_coords,  # Use floor level!
+                'region_id': region_id,
+                'is_stairs': 'stair' in region_data['label'].lower()
             }
         
-        # Add landmark object nodes
+        # Add landmark object nodes (also use floor level)
         landmark_objects = self._get_landmark_objects()
         for object_id in landmark_objects:
             obj_data = self.parser.objects[object_id]
             node_id = f"object_{object_id}"
             self.graph.add_node(node_id)
+            
+            # Calculate floor level for objects too
+            center = obj_data['center']
+            size = obj_data['size']
+            floor_z = center[2] - (size[2] / 2.0)  # Bottom of bbox
+            floor_coords = np.array([center[0], center[1], floor_z])
+            
             self.node_info[node_id] = {
                 'type': 'object',
                 'id': node_id,
                 'label': obj_data['label'],
-                'coordinates': obj_data['center'],
+                'coordinates': floor_coords,  # Use floor level!
                 'region_id': obj_data['region_id']
             }
         
@@ -83,19 +98,39 @@ class NavigableGraph:
         return landmarks
     
     def _connect_regions(self):
-        """Connect spatially adjacent regions"""
+        """Connect spatially adjacent regions, respecting floor constraints"""
         region_nodes = [n for n in self.graph.nodes() if n.startswith('region_')]
+        
+        # Increase threshold for better connectivity
+        HORIZONTAL_THRESHOLD = 8.0  # More lenient for horizontal distance
+        SAME_FLOOR_Z_THRESHOLD = 2.0  # Within 2m vertically = same floor
+        STAIR_CONNECTION_THRESHOLD = 10.0  # Stairs can connect further
         
         for i, node1 in enumerate(region_nodes):
             for node2 in region_nodes[i+1:]:
                 coords1 = self.node_info[node1]['coordinates']
                 coords2 = self.node_info[node2]['coordinates']
                 
-                distance = np.linalg.norm(coords2 - coords1)
+                # Calculate distances
+                horizontal_dist = np.sqrt((coords2[0] - coords1[0])**2 + 
+                                         (coords2[1] - coords1[1])**2)
+                vertical_dist = abs(coords2[2] - coords1[2])
+                total_dist = np.linalg.norm(coords2 - coords1)
                 
-                # Connect if close enough
-                if distance < self.region_distance_threshold:
-                    self.graph.add_edge(node1, node2, weight=distance)
+                # Check if either node is stairs
+                is_stairs1 = self.node_info[node1].get('is_stairs', False)
+                is_stairs2 = self.node_info[node2].get('is_stairs', False)
+                
+                # Connection rules:
+                # 1. Same floor (small vertical difference) + close horizontally
+                if vertical_dist < SAME_FLOOR_Z_THRESHOLD and horizontal_dist < HORIZONTAL_THRESHOLD:
+                    self.graph.add_edge(node1, node2, weight=total_dist)
+                
+                # 2. One or both are stairs + reasonably close
+                elif (is_stairs1 or is_stairs2) and total_dist < STAIR_CONNECTION_THRESHOLD:
+                    # Add penalty for vertical movement to prefer horizontal paths
+                    weight = horizontal_dist + (vertical_dist * 2.0)  # 2x penalty for vertical
+                    self.graph.add_edge(node1, node2, weight=weight)
     
     def _connect_objects_to_regions(self):
         """Connect objects to their parent regions and nearby objects"""
