@@ -423,9 +423,9 @@ class DatasetVisualizer:
                     if self.show_region_labels:
                         label = self.scene_widget.add_3d_label(
                             np.array(region['position']),
-                            f"{region.get('region_type', 'region')} ({region_id})"
+                            f"{region.get('label', 'region')} ({region_id})"
                         )
-                        label.color = gui.Color(0.6, 0.6, 0.6)
+                        label.color = gui.Color(0.0, 0.0, 0.0)  # Black for better readability
                         label.scale = 1.2
                         self.active_labels.append(label)
         
@@ -511,7 +511,7 @@ class DatasetVisualizer:
                 
                 label = self.scene_widget.add_3d_label(
                     np.array(region['position']),
-                    f"START: {region.get('region_type', 'region')} ({start_id})"
+                    f"START: {region.get('label', 'region')} ({start_id})"
                 )
                 label.color = gui.Color(1.0, 0.0, 0.8)
                 label.scale = 1.5
@@ -568,7 +568,7 @@ class DatasetVisualizer:
                 
                 label = self.scene_widget.add_3d_label(
                     np.array(region['position']),
-                    f"END: {region.get('region_type', 'region')} ({end_id})"
+                    f"END: {region.get('label', 'region')} ({end_id})"
                 )
                 label.color = gui.Color(0.0, 1.0, 0.0)
                 label.scale = 1.5
