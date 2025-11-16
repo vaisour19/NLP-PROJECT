@@ -1,0 +1,230 @@
+{
+  "_comment": "Rich natural language templates for navigation instruction generation",
+  "_usage": "Each template has placeholders: {start}, {end}, {start_color}, {start_label}, {end_color}, {end_label}, {start_region}, {end_region}",
+  
+  "instruction_templates": {
+    "direct_imperative": [
+      "Go from {start} to {end}",
+      "Walk from {start} to {end}",
+      "Navigate from {start} to {end}",
+      "Head from {start} to {end}",
+      "Move from {start} to {end}",
+      "Proceed from {start} to {end}",
+      "Travel from {start} to {end}",
+      "Go to {end} from {start}",
+      "Walk to {end} from {start}",
+      "Head to {end} from {start}"
+    ],
+    
+    "casual_conversational": [
+      "Hey, can you go from {start} to {end}?",
+      "Could you walk from {start} to {end}?",
+      "Can you head over to {end} from {start}?",
+      "I need you to go from {start} to {end}",
+      "Please go from {start} to {end}",
+      "Would you mind going from {start} to {end}?",
+      "Go ahead and walk from {start} to {end}",
+      "Can you make your way from {start} to {end}?",
+      "Could you navigate from {start} to {end}?",
+      "I'd like you to go from {start} to {end}"
+    ],
+    
+    "descriptive_rich": [
+      "Starting at {start}, make your way to {end}",
+      "From {start}, proceed to {end}",
+      "Begin at {start} and navigate to {end}",
+      "Leave {start} and go to {end}",
+      "Your starting point is {start}, your destination is {end}",
+      "Start from {start} and end at {end}",
+      "Departing from {start}, head to {end}",
+      "With {start} as your origin, navigate to {end}",
+      "From your position at {start}, go to {end}",
+      "Beginning from {start}, travel to {end}"
+    ],
+    
+    "goal_oriented": [
+      "{end} is your goal, start from {start}",
+      "Your destination is {end}, starting from {start}",
+      "The target is {end}, begin at {start}",
+      "You need to reach {end} from {start}",
+      "Your objective is {end}, departing from {start}",
+      "Go to the destination {end} from {start}",
+      "Reach {end} starting at {start}",
+      "The endpoint is {end}, the start is {start}",
+      "Navigate to the target {end} from {start}",
+      "Your goal is to reach {end} from {start}"
+    ],
+    
+    "spatial_context": [
+      "From {start} in the {start_region}, go to {end} in the {end_region}",
+      "Navigate from {start} in the {start_region} to {end}",
+      "Go from the {start_region}'s {start} to the {end_region}'s {end}",
+      "From the {start} you see in the {start_region}, head to {end}",
+      "In the {start_region}, leave {start} and go to {end} in the {end_region}",
+      "Walk from {start} located in the {start_region} to {end}",
+      "From the {start_region} where {start} is, go to {end}",
+      "Starting in the {start_region} at {start}, navigate to {end}",
+      "Leave the {start_region}'s {start} and head to the {end_region}'s {end}",
+      "Go from {start} in the {start_region} over to {end}"
+    ],
+    
+    "color_emphasized": [
+      "Go from the {start_color} {start_label} to the {end_color} {end_label}",
+      "Walk from the {start_color} {start_label} to {end}",
+      "Navigate from {start} to the {end_color} {end_label}",
+      "From the {start_color} {start_label}, head to the {end_color} {end_label}",
+      "Leave the {start_color} {start_label} and go to the {end_color} {end_label}",
+      "Starting at the {start_color} {start_label}, go to {end}",
+      "Your path is from the {start_color} {start_label} to the {end_color} {end_label}",
+      "Go to the {end_color} {end_label} from the {start_color} {start_label}",
+      "From that {start_color} {start_label}, walk to the {end_color} {end_label}",
+      "Navigate from the {start_color} {start_label} to that {end_color} {end_label}"
+    ],
+    
+    "natural_deictic": [
+      "Go from that {start_label} over there to the {end_label}",
+      "Walk from the {start_label} you see to that {end_label}",
+      "From that {start_label}, head over to the {end_label}",
+      "Leave that {start_label} and go to the {end_label} over there",
+      "From the {start_label} there, walk to that {end_label}",
+      "Go to that {end_label} from the {start_label} you see",
+      "Navigate from that {start_label} to the {end_label}",
+      "From where the {start_label} is, go to the {end_label}",
+      "Walk over to that {end_label} from the {start_label}",
+      "From the {start_label}, make your way to that {end_label}"
+    ],
+    
+    "polite_formal": [
+      "Please navigate from {start} to {end}",
+      "Kindly proceed from {start} to {end}",
+      "Would you please go from {start} to {end}",
+      "I would like you to navigate from {start} to {end}",
+      "Could you please walk from {start} to {end}",
+      "Please make your way from {start} to {end}",
+      "If you could, go from {start} to {end}",
+      "I'd appreciate if you'd go from {start} to {end}",
+      "Would you be able to navigate from {start} to {end}",
+      "Please proceed from {start} to {end}"
+    ],
+    
+    "sequential_action": [
+      "First, go to {start}, then proceed to {end}",
+      "Start at {start}, then go to {end}",
+      "Begin your route at {start}, and end at {end}",
+      "Step one: locate {start}. Step two: go to {end}",
+      "Your route: {start} to {end}",
+      "Path: from {start} to {end}",
+      "Route: start {start}, end {end}",
+      "Journey from {start} to {end}",
+      "Trip starting at {start}, ending at {end}",
+      "Navigate from point {start} to point {end}"
+    ],
+    
+    "question_format": [
+      "Can you get from {start} to {end}?",
+      "How do I get from {start} to {end}?",
+      "Where is {end} from {start}?",
+      "Could you show me the way from {start} to {end}?",
+      "What's the path from {start} to {end}?",
+      "Can you take me from {start} to {end}?",
+      "Is it possible to go from {start} to {end}?",
+      "Could you guide me from {start} to {end}?",
+      "Can you help me get from {start} to {end}?",
+      "How would I navigate from {start} to {end}?"
+    ]
+  },
+  
+  "description_templates": {
+    "basic": [
+      "the {color} {label}",
+      "{color} {label}",
+      "the {label}",
+      "a {color} {label}"
+    ],
+    
+    "spatial_relative": [
+      "the {color} {label} near the {nearby_object}",
+      "the {label} next to the {nearby_object}",
+      "the {color} {label} by the {nearby_object}",
+      "the {label} close to the {nearby_object}",
+      "the {color} {label} beside the {nearby_object}",
+      "the {label} adjacent to the {nearby_object}",
+      "{color} {label} near the {nearby_object}",
+      "the {label} positioned near the {nearby_object}",
+      "the {color} {label} located by the {nearby_object}",
+      "{label} by the {nearby_object}"
+    ],
+    
+    "region_contextualized": [
+      "the {color} {label} in the {region}",
+      "the {label} in the {region}",
+      "{color} {label} in the {region}",
+      "the {region}'s {color} {label}",
+      "the {label} located in the {region}",
+      "{label} in the {region}",
+      "the {color} {label} you see in the {region}",
+      "the {region}'s {label}",
+      "{region}'s {color} {label}",
+      "the {label} inside the {region}"
+    ],
+    
+    "deictic": [
+      "that {color} {label}",
+      "that {label} over there",
+      "the {label} over there",
+      "that {color} {label} you see",
+      "the {label} there",
+      "that {label}",
+      "the {color} {label} you can see",
+      "that {color} one",
+      "the {label} right there",
+      "that particular {color} {label}"
+    ],
+    
+    "material_descriptive": [
+      "{color} {material} {label}",
+      "the {material} {label}",
+      "the {color} {material} {label}",
+      "{material} {color} {label}",
+      "the {label} made of {material}"
+    ],
+    
+    "size_descriptive": [
+      "the {size} {color} {label}",
+      "the {size} {label}",
+      "{size} {color} {label}",
+      "the {size} {label} in the {region}",
+      "that {size} {color} {label}"
+    ],
+    
+    "functional": [
+      "the {label} for {function}",
+      "the {color} {label} used for {function}",
+      "the {function} {label}",
+      "{color} {label} for {function}"
+    ]
+  },
+  
+  "alternative_description_patterns": [
+    "{label}",
+    "{color} {label}",
+    "the {label}",
+    "the {color} {label}",
+    "that {label}",
+    "that {color} {label}",
+    "{label} in the {region}",
+    "{color} {label} in the {region}",
+    "the {label} in the {region}",
+    "the {region}'s {label}",
+    "the {region}'s {color} {label}",
+    "{region}'s {label}",
+    "the {label} over there",
+    "that {label} over there",
+    "the {color} {label} you see",
+    "the {label} there",
+    "{label} in the {region}",
+    "the {label} you see in the {region}",
+    "that {color} {label} in the {region}",
+    "{color} {label} near the {nearby_object}"
+  ]
+}
